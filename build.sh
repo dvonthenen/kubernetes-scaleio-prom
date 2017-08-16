@@ -2,7 +2,7 @@
 
 rm -rf ./vendor
 rm glide.lock
-rm ./scaleio-scheduler
+rm ./kubernetes-scaleio-prom
 glide up
 
 grep -R --exclude-dir vendor --exclude-dir .git --exclude-dir mesos --exclude build.sh TODO ./
