@@ -1,0 +1,10 @@
+FROM ubuntu:14.04
+MAINTAINER David vonThenen <davidvonthenen@gmail.com>
+
+RUN apt-get update -q
+RUN apt-get -y install curl dnsutils
+
+ADD kubernetes-scaleio-prom /kubernetes-scaleio-prom
+EXPOSE 80
+
+ENTRYPOINT /kubernetes-scaleio-prom
