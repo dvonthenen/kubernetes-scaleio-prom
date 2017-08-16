@@ -1,0 +1,32 @@
+apiVersion: apps/v1beta1
+kind: Deployment
+metadata:
+  name: scaleio-metrics
+  labels:
+    app: scaleio-metrics
+spec:
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        app: scaleio-metrics
+    spec:
+      containers:
+        - name: scaleio-metrics
+          image: "dvonthenen/kubernetes-scaleio-prom:latest"
+          imagePullPolicy: Always
+          env:
+            - name: CLUSTER_NAME
+              value: "Scaleio123"
+            - name: SCALEIO_USERNAME
+              valueFrom:
+                secretKeyRef:
+                  name: sio-secret
+                  key: username
+            - name: SCALEIO_PASSWORD
+              valueFrom:
+                secretKeyRef:
+                  name: sio-secret
+                  key: password
+            - name: SCALEIO_ENDPOINT
+              value: "https://10.138.0.6/api"
