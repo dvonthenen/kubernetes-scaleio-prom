@@ -17,7 +17,7 @@ spec:
           imagePullPolicy: Always
           env:
             - name: CLUSTER_NAME
-              value: "Scaleio123"
+              value: "scaleio"
             - name: SCALEIO_USERNAME
               valueFrom:
                 secretKeyRef:
