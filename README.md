@@ -40,6 +40,8 @@ kubectl create -f kubernetes-scaleio-prom.yaml
 cd ..
 
 # Let's deploy kubernetes-scaleio-prom
+# NOTE: Before you deploy, open the kubernetes-scaleio-prom.yaml and replace the
+# NOTE: SCALEIO_ENDPOINT and CLUSTER_NAME and your Kubernetes' ScaleIO Secret name
 cd deployments
 kubectl create -f kubernetes-scaleio-prom.yaml
 cd ..
