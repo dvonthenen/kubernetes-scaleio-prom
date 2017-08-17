@@ -4,6 +4,7 @@ metadata:
   name: scaleio-metrics
   labels:
     app: scaleio-metrics
+  namespace: kube-system
 spec:
   replicas: 1
   template:
@@ -29,4 +30,4 @@ spec:
                   name: sio-secret
                   key: password
             - name: SCALEIO_ENDPOINT
-              value: "https://10.138.0.6/api"
+              value: "https://10.138.0.7/api"

@@ -4,6 +4,7 @@ metadata:
   labels:
     app: scaleio-metrics
   name: scaleio-metrics
+  namespace: kube-system
 spec:
   ports:
     - port: 80
