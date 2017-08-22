@@ -193,20 +193,20 @@ scrape_configs:
 
   # The job name is added as a label `job=<job_name>` to any timeseries scraped from this config.
   - job_name: prometheus
-    scrape_interval: 5s
+    scrape_interval: 15s
     scheme: http
     static_configs:
       - targets: ['localhost:9090']
 
   - job_name: 'frontend'
-    scrape_interval: 5s
+    scrape_interval: 15s
     static_configs:
       - targets: ['frontend.default.svc.cluster.local:80']
   - job_name: 'backend'
-    scrape_interval: 5s
+    scrape_interval: 15s
     static_configs:
       - targets: ['backend.default.svc.cluster.local:80']
   - job_name: 'scaleio'
-    scrape_interval: 5s
+    scrape_interval: 15s
     static_configs:
       - targets: ['scaleio-metrics:80']
