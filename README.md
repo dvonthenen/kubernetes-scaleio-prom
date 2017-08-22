@@ -11,6 +11,8 @@ It is assumed that this kubernetes-scaleio-prom container will be deployed to th
 # Save the configuration file in Kubernetes for use by Prometheus.
 # NOTE: This config.yaml is different from the one found at https://github.com/dvonthenen/jop-stack
 # NOTE: This is due to adding in the kubernetes-scaleio-prom metrics endpoint
+# NOTE: If you change the kubernetes-scaleio-prom deployment name in the next
+#       step, change the endpoint name from 'scaleio-metrics' to the new name
 cd configs
 kubectl create configmap prometheus --from-file=config.yaml --namespace=kube-system
 cd ..
